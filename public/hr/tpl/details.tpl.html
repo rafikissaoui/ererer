@@ -1,0 +1,81 @@
+
+<nav>
+	<a href="#/hr/employee" type="button" class="btn btn-info">List</a>
+</nav>
+
+<div class="panel panel-default" ng-init="editable = false">
+
+	<div class="panel-heading">
+
+		<span>
+			<div class="btn-group">
+				<button type="button" ng-class="!editable ? 'active': '' " ng-click="editable=false" class="btn btn-default">mode Vue</button>
+				<button type="button" ng-class="editable ? 'active': ''" ng-click="editable=true" class="btn btn-default">mode editon </button>
+			</div>
+		</span>
+
+	</div>
+
+	<div class="panel-body">
+		<form role="form">
+
+			<input type="hidden" class="form-control" id="_id" ng-model="employee._id">
+			
+			<div class="form-group">
+				<label for="name">CIN</label>
+				<input ng-show="editable" type="text" class="form-control" id="cin" placeholder="CIN" ng-model="employee.cin">
+				<p ng-show="!editable">{{employee.cin}}</p>
+			</div>
+
+			<div class="form-group">
+				<label for="name">Nom</label>
+				<input ng-show="editable" type="text" class="form-control" id="nom" placeholder="Nom" ng-model="employee.nom">
+				<p ng-show="!editable">{{employee.nom}}</p>
+			</div>
+
+			<div class="form-group">
+				<label for="name">Prénom</label>
+				<textarea ng-show="editable" class="form-control" id="prenom" placeholder="prenom" ng-model="employee.prenom"/>
+				<p ng-show="!editable">{{employee.prenom}}</p>
+			</div>
+
+			<div class="form-group">
+				<label for="name">Tel</label>
+				<input ng-show="editable" type="text" class="form-control" id="tel" placeholder="Tel" ng-model="employee.tel">
+				<p ng-show="!editable">{{employee.tel}}</p>
+			</div>
+
+			<div class="form-group">
+				<label for="name">Email</label>
+				<input ng-show="editable" type="text" class="form-control" id="email" placeholder="Email" ng-model="employee.email">
+				<p ng-show="!editable">{{employee.email}}</p>
+			</div>
+
+			<div class="form-group">
+				<label for="name">Adresse</label>
+				<input ng-show="editable" type="text" class="form-control" id="adresse" placeholder="Adresse" ng-model="employee.adresse">
+				<p ng-show="!editable">{{employee.adresse}}</p>
+			</div>
+
+			<!-- <div class="form-group">
+				<label for="name">date naissence</label>
+				<input ng-show="editable" type="text" class="form-control" id="date_nais" placeholder="date_nais" ng-model="employee.date_nais">
+				<p ng-show="!editable">{{employee.date_nais}}</p>
+			</div> -->
+
+			<div class="form-group">
+				<label for="name">genre</label>
+				<input ng-show="editable" type="text" class="form-control" id="genre" placeholder="genre" ng-model="employee.genre">
+				<p ng-show="!editable">{{employee.genre}}</p>
+			</div>
+
+			<button ng-click="submit()" ng-show="editable" type="submit" class="btn btn-success">Submit</button>
+		</form>
+
+		<div ng-show="message" class="alert alert-success" role="alert">
+			{{message}}
+		</div>
+
+	</div>
+
+</div>

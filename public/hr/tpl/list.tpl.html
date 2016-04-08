@@ -1,0 +1,40 @@
+
+<nav>
+	<a href="#/hr/employee_new" type="button" class="btn btn-success">Ajouter nouveau</a>
+	<br>
+	<input ng-model="query" type="text"
+        placeholder="chercher" autofocus class="pull-right">
+</nav>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Employées</h3>
+	</div>
+	<div class="panel-body">
+
+		<table class="table ">
+			<thead>
+				<tr>
+					<th>CIN</th>
+					<th>Nom</th>
+					<th>Prénom</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emp in employee | filter:query | orderBy: 'nom'">
+					<td>{{emp.cin}}</td>
+					<td>{{emp.nom}}</td>
+					<td>{{emp.prenom}}</td>
+
+					<td>
+						<span class="pull-right">
+							<a href="#/hr/employee/{{emp._id}}" type="button" class="btn btn-success btn-sm">detailles</a>
+							<a href="#/hr/employee_remove/{{emp._id}}" type="button" class="btn btn-danger btn-sm">Supprimer</a>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>

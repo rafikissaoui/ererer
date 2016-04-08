@@ -1,0 +1,63 @@
+
+<nav>
+	<a href="#/hr/employee" type="button" class="btn btn-info">List</a>
+</nav>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Ajouter nouveau </h3>
+	</div>
+	<div class="panel-body">
+
+		<form role="form">
+
+			<div class="form-group">
+				<label for="cin">CIN</label>
+				<input type="text" class="form-control" id="cin" placeholder="CIN" ng-model="cin">
+			</div>
+
+			<div class="form-group">
+				<label for="nom">nom</label>
+				<textarea class="form-control" id="nom" placeholder="Nom" ng-model="nom"/>
+			</div>
+
+			<div class="form-group">
+				<label for="prenom">Prénom</label>
+				<input type="text" class="form-control" id="prenom" placeholder="Prénom" ng-model="prenom">
+			</div>
+
+			<div class="form-group">
+				<label for="email">email</label>
+				<input type="text" class="form-control" id="email" placeholder="email" ng-model="email">
+			</div>
+
+			<div class="form-group">
+				<label for="email">adresse</label>
+				<input type="text" class="form-control" id="adresse" placeholder="adresse" ng-model="adresse">
+			</div>
+
+			<div class="form-group">
+				<label for="date_nais">date naissence</label>
+				<input type="text" class="form-control" id="date_nais" placeholder="date_nais" ng-model="date_nais">
+			</div>
+
+			<div class="form-group">
+				<label for="tel">Tel</label>
+				<input type="text" class="form-control" id="tel" placeholder="TEL" ng-model="tel">
+			</div>
+
+			<div class="form-group">
+				<label for="genre">Genre</label>
+				<input type="text" class="form-control" id="genre" placeholder="Genre" ng-model="genre">
+			</div>
+
+
+			<button ng-click="submit()" type="submit" class="btn btn-success">Submit</button>
+		</form>
+
+		<div ng-show="message" class="alert alert-success" role="alert">
+			{{message}}
+		</div>
+
+	</div>
+</div>

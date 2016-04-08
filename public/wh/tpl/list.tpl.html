@@ -1,0 +1,40 @@
+
+<nav>
+	<a href="#/wh/stock_new" type="button" class="btn btn-success">Ajouter nouveau</a>
+	<br>
+	<input ng-model="query" type="text"
+        placeholder="chercher" autofocus class="pull-right">
+</nav>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Employées</h3>
+	</div>
+	<div class="panel-body">
+
+		<table class="table ">
+			<thead>
+				<tr>
+					
+					<th>Nom</th>
+					<th>Quantité</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="st in stock | filter:query | orderBy: 'nom'">
+					
+					<td>{{st.nom}}</td>
+					<td>{{st.quantite}}</td>
+
+					<td>
+						<span class="pull-right">
+							<a href="#/wh/stock/{{st._id}}" type="button" class="btn btn-success btn-sm">détailles</a>
+							<a href="#/wh/stock_remove/{{st._id}}" type="button" class="btn btn-danger btn-sm">Supprimer</a>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
